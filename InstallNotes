@@ -1,0 +1,11 @@
+centOs 64 bit
+download oracle 11g xe 
+
+1. rpm -ivh oracle-xe-11.2.0-1.0.x86_64.rpm 
+2. /etc/init.d/oracle-xe configure - accept defaults - admin password for sys and sysdba 
+3. set $ORACLE_HOME,$ORACLE_PATH environment variables, SID is already set to XE by config script above.
+4. i will not create 3 databases for each system. Only 1 is enough, with 3 user schemas. In case of creating from scratch CREATE DATABASE statement can be called after deciding the sid, and init parameter file of the db, a sample is in /dbs folder. 
+5. run ./$ORACLE_HOME/bin/sqlplus / as sysdba@XE /home/mindIT/create_schemas.sql - to create user schemas and grant privileges - or run the contents in a SQL client - not tested on sqlplus but should work
+6. PR_PRICE in the definition provided - has 2 PK, which is invalid. A table can have only one PK. I removed that constraint an set it to null to continue with creation of the tables. 
+7. run ./$ORACLE_HOME/bin/sqlplus / as sysdba@XE < /home/mindIT/create_tables.sql - or run the contents in a SQL client - not tested on sqlplus but should work
+8. run ./$ORACLE_HOME/bin/sqlplus / as sysdba@XE < /home/mindIT/populate_tables.sql - or run the contents in a SQL client  - not tested on sqlplus but should work
