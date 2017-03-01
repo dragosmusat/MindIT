@@ -15,3 +15,4 @@ download oracle 11g xe
 12. exposed ws will be called with a dummy id. it will return success if PA_ITEM had rows inserted.
 13. It will work only once since ITEM_ID is a pk in that table. 
 14. this is just a dummy test, not the most performant solution but it does the job.
+15. if you get maximum open cursors exceeded from Oracle ALTER SYSTEM SET open_cursors = 400 SCOPE=BOTH;
