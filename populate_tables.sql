@@ -91,7 +91,7 @@ BEGIN
        idd := idd + 10;
       FOR k IN 1..10 LOOP
         /*DBMS_OUTPUT.PUT_LINE(idd+k);*/
-        INSERT  INTO "PRICING"."PR_PRICE" VALUES (idd+k,SYSDATE - k,MOD(j.ITEM_ID,25));
+        INSERT  INTO "PRICING"."PR_PRICE" VALUES (j.ITEM_ID,SYSDATE - k,MOD(j.ITEM_ID,25));
         v_COUNT := v_COUNT + 1;
       END LOOP;
       
