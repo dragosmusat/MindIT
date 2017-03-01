@@ -9,6 +9,9 @@ download oracle 11g xe
 6. PR_PRICE in the definition provided - has 2 PK, which is invalid. A table can have only one PK first. But according to the requirements the item_id cannot be pk, and neither price_date. Dropped constraints
 7. run ./$ORACLE_HOME/bin/sqlplus / as sysdba@XE < /home/mindIT/create_tables.sql - or run the contents in a SQL client - not tested on sqlplus but should work
 8. run ./$ORACLE_HOME/bin/sqlplus / as sysdba@XE < /home/mindIT/populate_tables.sql - or run the contents in a SQL client  - not tested on sqlplus but should work
-9. I will use nad ESB(IIB9) not ETL to populate PA_ITEM table.
-10. We will asube Integration BUS was already configured. Datasource used is present in odbc.ini file.
-11. 
+9. I will use an ESB(IIB9) not ETL to populate PA_ITEM table. To ETL informatica i have no access right now.
+10. We will asume Integration BUS was already configured. Datasource used is present in odbc.ini file.
+11. deploy bar file from release. 
+12. exposed ws will be called with a dummy id. it will return success if PA_ITEM had rows inserted.
+13. It will work only once since ITEM_ID is a pk in that table. 
+14. this is just a dummy test, not the most performant solution but it does the job.
