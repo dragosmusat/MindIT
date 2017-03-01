@@ -55,7 +55,7 @@ BEGIN
 END;
 
 
-DECLARE
+/*DECLARE
   v_count NUMBER DEFAULT 0;
 BEGIN
     FOR j IN
@@ -74,7 +74,7 @@ BEGIN
       
     END LOOP;
   DBMS_OUTPUT.PUT_LINE(v_COUNT);
-END;
+END;*/
 
 DECLARE
   v_count NUMBER DEFAULT 0;
